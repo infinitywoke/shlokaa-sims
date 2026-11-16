@@ -1,0 +1,1290 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shlokaa Enterprises — Dashboard preview</title>
+    <link rel="icon" href="../SIMS/Photo/Shlokaa%20Jet%20Black.JPG" type="image/x-icon" class="rounded-circle" />
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap" rel="stylesheet">
+    <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="../SIMS/Content/DropDown/select2.css" rel="stylesheet" />
+
+
+
+    <style>
+
+        body {
+            scrollbar-width: thin;
+        }
+
+        .btn-export-all {
+            position: absolute;
+            right: 100px;
+            margin-top: -15px;
+        }
+
+        #table {
+            width: 100% !important;
+        }
+
+        .dataTables_filter, .dataTables_info, .dataTables_paginate {
+            display: none;
+        }
+        .select2.select2-container {
+            width: 100% !important;
+        }
+        .select2-container--default .select2-selection--single {
+            border: 1px solid #ced4da !important;
+            padding-top: 4px;
+            font-size: 17px;
+            padding-left: 9px;
+            color: #495057de !important;
+        }
+            .select2-container--default .select2-selection--single .select2-selection__rendered {
+                color: #495057de !important;
+            }
+    </style>
+
+<link href="../SIMS/Content/Bootstrap/bootstrap.css" rel="stylesheet" />
+<link href="../SIMS/Content/Jquery/jquery-ui.min.css" rel="stylesheet" />
+<link href="../SIMS/Content/Jquery/jquery-ui.theme.css" rel="stylesheet" />
+<link href="../SIMS/Content/fonts/font-awesome.css" rel="stylesheet" />
+<link href="../SIMS/Content/Admin/perfect-scrollbar.css" rel="stylesheet" />
+<link href="../SIMS/Content/Admin/app.css" rel="stylesheet" />
+<link href="../SIMS/Content/Admin/toastr.css" rel="stylesheet" />
+<link href="../SIMS/Content/Admin/style.css" rel="stylesheet" />
+<link href="../SIMS/Content/Admin/admin.css" rel="stylesheet" />
+<link href="../SIMS/Content/Admin/venobox.css" rel="stylesheet" />
+<script src="../SIMS/Scripts/modernizr-2.8.3.js"></script>
+</head>
+<body style="overflow-x:hidden">
+<div style="position:fixed;bottom:12px;right:12px;z-index:9999;background:#222;color:#fff;padding:6px 12px;border-radius:6px;font:13px sans-serif;opacity:.85">Static preview &middot; sample data</div>
+    <div id="app">
+        <div id="sidebar" class='active'>
+            <div class="sidebar-wrapper active" style="overflow-y:scroll;overflow-x:hidden;">
+                <div class="sidebar-header text-center" style="margin-top: -25px;">
+                    <img src="../SIMS/Photo/Shlokaa%20White%20png.png" alt="" class="img-fluid adminlogo" style="height:80px;">      <hr />
+                </div>
+                <div class="sidebar-menu" style="margin-top:-75px;">
+                    <ul class="menu">
+                            <li class="item-master">
+                                <a href="../SIMS/Staff/Index" class='sidebar-link'>
+                                    <i data-feather="home" width="20"></i>
+                                    <br />
+
+                                    DASHBOARD
+                                </a>
+                            </li>
+                                <li class="item-master">MASTER DATA</li>
+                                <li class="sidebar-item ">
+                                    <a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                        <span>Employee List</span>
+                                    </a>
+                                    <div class="collapse shadow" id="collapseExample" style="margin-left: 10px;margin-right: 10px;outline: solid #e9d9d9 0.5px">
+                                        <a href="../SIMS/Users/Index" class='sidebar-link'> <span>Employee </span></a>
+                                        <a href="../SIMS/Department/Index" class='sidebar-link'> <span>Department </span></a>
+                                        <a class='sidebar-link' href="../SIMS/Users/ActivateUsers">Activate Employee</a>
+                                    </div>
+                                </li>
+
+                                <li class="sidebar-item ">
+                                    <a data-toggle="collapse" href="#collapseExample100" role="button" aria-expanded="false" aria-controls="collapseExample100">
+                                        <span>Customer List</span>
+                                    </a>
+                                    <div class="collapse shadow" id="collapseExample100" style="margin-left: 10px;margin-right: 10px;outline: solid #e9d9d9 0.5px">
+                                        <a href="../SIMS/Customer/Index" class='sidebar-link'> <span>Customer </span></a>
+                                        <a href="../SIMS/Place/Index" class='sidebar-link'> <span>Place </span></a>
+                                    </div>
+                                </li>
+
+                                <li class="sidebar-item ">
+                                    <a data-toggle="collapse" href="#collapseExample4" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                        <span>Item List</span>
+                                    </a>
+                                    <div class="collapse shadow" id="collapseExample4" style="margin-left: 10px;margin-right: 10px;outline: solid #e9d9d9 0.5px">
+                                        <a href="../SIMS/Item/Index" class='sidebar-link' style="padding:2px 0px 2px 35px">Item</a>
+                                        <a href="../SIMS/Category/Index" class='sidebar-link' style="padding:2px 0px 2px 35px">Category</a>
+                                        <a href="../SIMS/SubCategory/Index" class='sidebar-link' style="padding:0px 0px 0px 35px">Sub Category</a>
+                                        <a href="../SIMS/ItemSize/Index" class='sidebar-link' style="padding:0px 0px 0px 35px">Size</a>
+
+                                        <a href="../SIMS/UnitOfMeasurement/Index" class='sidebar-link' style="padding:0px 0px 0px 35px">Unit</a>
+                                    </div>
+                                </li>
+                                <li class="sidebar-item ">
+                                    <a data-toggle="collapse" href="#collapseExample104" role="button" aria-expanded="false" aria-controls="collapseExample104">
+                                        <span>Vehicle List</span>
+                                    </a>
+                                    <div class="collapse shadow" id="collapseExample104" style="margin-left: 10px;margin-right: 10px;outline: solid #e9d9d9 0.5px">
+                                        <a href="../SIMS/VehicleNo/Index" class='sidebar-link'> <span>Vehicle No</span></a>
+                                    </div>
+                                </li>
+                                <li class="sidebar-item ">
+                                    <a data-toggle="collapse" href="#collapseExample140" role="button" aria-expanded="false" aria-controls="collapseExample140">
+                                        <span>Expense List</span>
+                                    </a>
+                                    <div class="collapse shadow" id="collapseExample140" style="margin-left: 10px;margin-right: 10px;outline: solid #e9d9d9 0.5px">
+                                        <a href="../SIMS/PaymentExpenseAdd/Index" class='sidebar-link'> <span>Expense</span></a>
+                                    </div>
+                                </li>
+
+
+                                <li class="item-master">SALES & MARKETING</li>
+                                <li class="sidebar-item">
+                                    <a href="../SIMS/VisitLog/Index" class='sidebar-link'><span>Visit Log</span></a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="../SIMS/VehicleLog/Index" class='sidebar-link'> <span>Vehicle Log</span></a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="../SIMS/SalesOrder/Index"><span>SalesOrder</span></a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="../SIMS/Sales/Index" class='sidebar-link'><span>Sales</span></a>
+                                </li>
+
+
+
+                                <li class="item-master">OPERATIONS</li>
+                                <li class="sidebar-item">
+                                    <a href="../SIMS/MaterialMovement/Index" class='sidebar-link'><span>Material Movement</span></a>
+                                </li>
+
+                                <li class="sidebar-item">
+                                    <a href="../SIMS/SpinningProduction/Index" class='sidebar-link'><span>Spinning Production</span></a>
+                                </li>
+
+
+                                <li class="item-master">PERSONNEL ADMIN</li>
+                                <li class="sidebar-item">
+                                    <a href="../SIMS/AccessMatrix/Index" class='sidebar-link'><span>Modules</span></a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="../SIMS/AccessMatrixDetails/Index" class='sidebar-link'><span>Permissions</span></a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="../SIMS/Attendance/Index" class='sidebar-link'><span>Attendance</span></a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a class="dropdown-item" href="../SIMS/LeaveApply/Index"><span>Leave Apply</span></a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="../SIMS/ExpenseReport/Index" class='sidebar-link'><span>Expense Report</span></a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="../SIMS/Payment/Index" class='sidebar-link'><span>Payment</span></a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="../SIMS/Cheque/Index" class='sidebar-link'><span>Cheque</span></a>
+                                </li>
+                    </ul>
+                </div>
+                <button class="sidebar-toggler btn x" id="btnclose" style="font-weight:600">X</button>
+            </div>
+        </div>
+        <div id="main">
+            <nav class="navbar navbar-header navbar-expand" style="background:rgba(255, 137, 0, 0.5 );height:50px">
+                <a class="sidebar-toggler" href="#" style="color:orangered"><i class="fa fa-bars" style="font-size:25px;"></i></a>
+                <button class="btn navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                    <ul class="navbar-nav d-flex align-items-center navbar-light ml-auto">
+
+                        <li class="dropdown">
+                            <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle " style="color:white;font-size:20px;">
+                                <i class="fa fa-cog"><i class="fa fa-caret-down" style="margin-left:10px;"></i></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right card-body" style="line-height:30px;">
+
+                                        <a class="dropdown-item" href="../SIMS/Staff/ChangePassword">Change Password</a>
+                                        <a class="dropdown-item" href="../SIMS/Gallery/Index">Gallery</a>
+                                        
+                                        
+                                        <div class="dropdown-divider"></div>
+
+                                        <a class="dropdown-item logout-btn" href="#" style="font-weight:400;color:black;">Logout</a>
+
+                                        
+
+
+                            </div>
+
+                        </li>
+                        <li>
+                        <li><strong>Hi, Local Admin!</strong></li>
+                    </ul>
+                </div>
+            </nav>
+            <div>
+<style>
+    .admin-form {
+        padding: 20px;
+        /* background-color: #d8e2ee82 !important;*/
+        background-color: #d8e2ee00 !important
+    }
+
+    @media (max-width:670px) {
+        .admin-outer-form {
+            padding: 0;
+        }
+
+        .admin-form {
+            padding: 20px;
+            background-color: #eee !important
+        }
+    }
+</style>
+<script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+<div class="admin-outer-form">
+    <div class="admin-form">
+            <div class=" py-2" style="border-radius:15px;">
+                <div class="d-flex flex-wrap justify-content-around ">
+                    <div class="card border-0" style="border-radius:28px">
+                        <div class="card-body shadow text-center d-flex flex-column justify-content-center  px-3 pt-3 pb-1" style="border-radius:28px">
+                            <span class="d-flex align-items-center" style="gap: 15px; font-weight: 600">
+                                <span class="d-flex justify-content-center align-items-center" style="background:#ffb03b42;height:60px;width:60px;border-radius:50%;font-weight:600">
+                                    <i class="fas fa-file-signature position-relative" style="font-size:30px;left: 5px;top: -4px;color:orange"></i>
+                                </span>
+                                Tally Entry Pending
+                            </span><label id="lblTallyEntryPending" style="color:orange;font-weight:600;font-size:30px"></label>
+                        </div>
+                    </div>
+                    <div class="card border-0" style="border-radius:28px">
+                        <div class="card-body shadow text-center d-flex flex-column justify-content-center  px-3 pt-3 pb-1" style="border-radius:28px">
+                            <span class="d-flex align-items-center" style="gap: 15px; font-weight: 600">
+                                <span class="d-flex justify-content-center align-items-center" style="background:#b007073b;height:60px;width:60px;border-radius:50%;font-weight:600">
+                                    <img src="../SIMS/Photo/payment-pending-icon.png" style="width:35px" />
+                                </span>
+                                Payment Pending
+                            </span><label id="lblPaymentPending" style="color:#B00707;font-weight:600;font-size:30px"></label>
+                        </div>
+                    </div>
+
+                    <div class="card border-0" style="border-radius:28px">
+                        <div class="card-body shadow text-center d-flex flex-column justify-content-center  px-3 pt-3 pb-1" style="border-radius:28px">
+                            <span class="d-flex align-items-center" style="gap: 15px; font-weight: 600">
+                                <span class="d-flex justify-content-center align-items-center" style="background:#c4c0d975;height:60px;width:60px;border-radius:50%;font-weight:600"><img src="../SIMS/Photo/cheque.png" style="width:40px" /></span>
+                                Cheque Pending
+                            </span><label id="lblChequePending" style="color:#071972;font-weight:600;font-size:30px"></label>
+                        </div>
+                    </div>
+                    <div class="card border-0" style="border-radius:28px">
+                        <div class="card-body shadow text-center d-flex flex-column justify-content-center  px-3 pt-3 pb-1" style="border-radius:28px">
+                            <span class="d-flex align-items-center" style="gap: 15px; font-weight: 600">
+                                <span class="d-flex justify-content-center align-items-center" style="background:#0786082e;height:60px;width:60px;border-radius:50%;font-weight:600">
+
+                                    <img src="../SIMS/Photo/payment-amount.png" style="width:35px" />
+                                </span>
+                                Payment Amount
+                            </span><label id="lblChequePaymentAmountPending" style="color:#078608;font-weight:600;font-size:30px"></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="salesTrend shadow p-3 bg-white" x-data="salesTrendGraph" style="border-radius:15px;">
+                <div class="row w-100 justify-content-start m-0" style="font-size:14px">
+                    <div class="col-12 col-md-6 col-lg-3">
+
+                            <label>Employees:</label>
+                            <select id="salesTrendUserSelect" x-on:change="()=>{getGraphDataForAllUsers();getGraphDataForAllUsersSR()}" class="form-control">
+                                <option value="0">All Employees</option>
+                                <option value="1">Rahul Sharma</option>
+<option value="2">Priya Nair</option>
+<option value="3">Arjun Mehta</option>
+<option value="4">Sneha Iyer</option>
+<option value="5">Vikram Rao</option>
+                            </select>
+
+                    </div>
+                    <div class="col-lg-3">
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <label>Start Date:</label>
+                        <input type="date" id="startDate" class="form-control shadow-sm" x-on:change="()=>{getGraphDataForAllUsers();getGraphDataForAllUsersSR()}" style="border-radius:7px" value="2026-11-01" />
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <label>End Date:</label>
+                        <input type="date" id="endDate" x-ref="endDate" class="form-control shadow-sm" x-on:change="getGraphDataForAllUsers()" style="border-radius:7px" value="2026-11-30" />
+                    </div>
+                    <div class="col-12">&nbsp;</div>
+                    <hr class="w-100" />
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <div x-show="isLoading" class="w-100">
+                            <div class="d-flex w-100 justify-content-center align-items-center" style="min-height: 50vh;">
+                                <div class="spinner-border text-warning" role="status">
+                                    <span class="sr-only">Loading...</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-100" x-show="!isLoading">
+                            <div class="d-flex flex-column w-100">
+
+                                <div class="d-flex flex-wrap justify-content-center">
+                                    <h3 class="text-center w-100">Sales Trend</h3>
+                                    <div x-show="!selectDateRequiredSalesTrend" style="width:100%">
+                                        <div class="bg-white mr-2 mb-2 py-2" style="border-radius:15px;">
+                                            <div id="salesTrendGraph"></div>
+                                        </div>
+                                    </div>
+                                    <div x-show="selectDateRequiredSalesTrend" style="width:100%">
+                                        <div class="w-100">
+                                            <div class="bg-white ml-3 w-100 mb-2 py-5  d-flex justify-content-center align-items-center" style="border-radius:15px;">
+                                                <img src="../SIMS/Photo/notDataYet.png" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <div x-show="isLoadingSR" class="w-100">
+                            <div class="d-flex w-100 justify-content-center align-items-center" style="min-height: 50vh;">
+                                <div class="spinner-border text-warning" role="status">
+                                    <span class="sr-only">Loading...</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-100" x-show="!isLoadingSR">
+                            <div class="d-flex flex-column w-100">
+
+                                <div class="d-flex flex-wrap justify-content-center">
+                                    <h3 class="text-center w-100">Sales Return Trend</h3>
+                                    <div x-show="!selectDateRequiredSalesTrendReturn" style="width:100%">
+                                        <div class="bg-white mr-2 mb-2 py-2" style="border-radius:15px;">
+                                            <div id="salesReturnTrendGraph"></div>
+                                        </div>
+                                    </div>
+                                    <div x-show="selectDateRequiredSalesTrendReturn" style="width:100%">
+                                        <div class="w-100">
+                                            <div class="bg-white ml-3 w-100 mb-2 py-5  d-flex justify-content-center align-items-center" style="border-radius:15px;">
+                                                <img src="../SIMS/Photo/notDataYet.png" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12">&nbsp;</div>
+            </div>
+
+            <div class="salesOder d-flex flex-wrap shadow p-3 bg-white" id="salesOderGraph" x-data="salesOrderGraph" x-init="getuserList()" style="border-radius:15px;">
+                <h3 class="text-center w-100" x-init="getTallyEntryPendingCount()">Sales Order</h3>
+                <div class="row w-100 justify-content-start m-0" style="font-size:14px">
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <label>Start Date:</label>
+                        <input type="date" id="startDate" class="form-control shadow-sm" x-on:change="getGraphDataForAllUsers()" style="border-radius:7px" value="2026-11-01" />
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <label>End Date:</label>
+                        <input type="date" id="endDate" x-ref="endDate" class="form-control shadow-sm" x-on:change="getGraphDataForAllUsers()" style="border-radius:7px" value="2026-11-30" />
+                    </div>
+                    <div class="col-lg-6 text-right">
+                        <label></label>
+                        <p class="font-weight-bolder" style="font-size:18px">
+                            Tally Entry Pending &nbsp;<span x-text="tallyEntyrPending" style="color:red;background-color:ghostwhite"></span>
+                        </p>
+                    </div>
+                    <div class="col-12">&nbsp;</div>
+                    <hr class="w-100" />
+                </div>
+                <div x-show="isLoading" class="w-100">
+                    <div class="d-flex w-100 justify-content-center align-items-center" style="min-height: 50vh;">
+                        <div class="spinner-border text-warning" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-100" x-show="!isLoading">
+                    <div class="d-flex flex-column w-100">
+                        <template x-if="dataNotFound">
+                            <div class="alert alert-warning font-weight-bold w-100" style="background-color: #ffc400;font-size:15px">
+                                Data not found for current month! (Below chart uses one year data)
+                            </div>
+                        </template>
+                        <div class="d-flex flex-wrap justify-content-center">
+                            <template x-for="(user,index) in userList">
+                                <div class="bg-white mr-2 mb-2 py-2" x-show="!selectDateRequired" style="border-radius:15px;">
+
+                                    <div :id="'salesOrderGrap_'+user.StaffId">
+
+                                    </div>
+                                </div>
+                            </template>
+                            <div x-show="selectDateRequired" class="w-100" style="display:none">
+                                <div class="bg-white ml-3 w-100 mb-2 py-5 d-flex justify-content-center align-items-center" style="border-radius:15px;">
+                                    <img src="../SIMS/Photo/notDataYet.png" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">&nbsp;</div>
+            </div>
+
+            <div class="sales d-flex flex-wrap shadow p-3 bg-white" x-data="salesGraphData" style="border-radius:15px;">
+                <h3 class="text-center w-100 mb-3">Sales</h3>
+                <div class="row w-100 justify-content-start m-0" style="font-size:14px">
+                    <div class="col-12 col-md-6 col-lg-4">
+
+                            <label>Employees:</label>
+                            <select id="salesUserSelect" x-on:change="getGraphDataForAllUsers()" class="form-control">
+                                <option value="0">All Employees</option>
+                                <option value="1">Rahul Sharma</option>
+<option value="2">Priya Nair</option>
+<option value="3">Arjun Mehta</option>
+<option value="4">Sneha Iyer</option>
+<option value="5">Vikram Rao</option>
+                            </select>
+
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <label>Start Date:</label>
+                        <input type="date" id="startDate" class="form-control shadow-sm" x-on:change="getGraphDataForAllUsers()" style="border-radius:7px" value="2026-11-01" />
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <label>End Date:</label>
+                        <input type="date" id="endDate" x-ref="endDate" class="form-control shadow-sm" x-on:change="getGraphDataForAllUsers()" style="border-radius:7px" value="2026-11-30" />
+                    </div>
+
+                    <div class="col-12">&nbsp;</div>
+                    <hr class="w-100" />
+                </div>
+                <div x-show="isLoading" class="w-100">
+                    <div class="d-flex w-100 justify-content-center align-items-center" style="min-height: 50vh;">
+                        <div class="spinner-border text-warning" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-100" x-show="!isLoading">
+                    <div class="d-flex flex-column w-100">
+                        <template x-if="dataNotFound">
+                            <div class="alert alert-warning font-weight-bold w-100" style="background-color: #ffc400;font-size: 15px">
+                                Data not found for current month! (Below chart uses one year data)
+                            </div>
+                        </template>
+                        <div class="d-flex flex-wrap justify-content-center">
+                            <div class="bg-white mr-2 mb-2 py-2" x-show="!selectDateRequired" style="border-radius:15px;">
+
+                                <div id="salesGraph"></div>
+                            </div>
+                            <div x-show="selectDateRequired" class="w-100" style="display:none">
+                                <div class="ml-3 w-100 mb-2 py-5 d-flex justify-content-center align-items-center" style="border-radius:15px;">
+                                    <img src="../SIMS/Photo/notDataYet.png" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12">&nbsp;</div>
+            </div>
+
+            <div class="productCategory  shadow p-3 bg-white" x-data="productCategoryGraph" style="border-radius:15px;">
+
+                <div class="row w-100 justify-content-start m-0" style="font-size:14px">
+                    <div class="col-12 col-md-6 col-lg-3">
+
+                            <label>Product Category:</label>
+                            <select id="productCategorySelect" x-on:change="()=>{getGraphDataForAllUsers();getGraphDataForAllUsersSR}" class="form-control">
+                                <option value="">All Products</option>
+                                <option value="Cookware">Cookware</option>
+<option value="Tawa">Tawa</option>
+<option value="Kadai">Kadai</option>
+<option value="Pressure Cooker">Pressure Cooker</option>
+<option value="Copper Bottles">Copper Bottles</option>
+                            </select>
+
+                    </div>
+                    <div class="col-lg-3">
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <label>Start Date:</label>
+                        <input type="date" id="startDate" class="form-control shadow-sm" x-on:change="()=>{getGraphDataForAllUsers();getGraphDataForAllUsersSR}" style="border-radius:7px" value="2026-11-01" />
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <label>End Date:</label>
+                        <input type="date" id="endDate" x-ref="endDate" class="form-control shadow-sm" x-on:change="()=>{getGraphDataForAllUsers();getGraphDataForAllUsersSR}" style="border-radius:7px" value="2026-11-30" />
+                    </div>
+                    <div class="col-12">&nbsp;</div>
+                    <hr class="w-100" />
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-7 col-md-6 col-sm-12">
+                        <div x-show="isLoadingProductTrend" class="w-100">
+                            <div class="d-flex w-100 justify-content-center align-items-center" style="min-height: 50vh;">
+                                <div class="spinner-border text-warning" role="status">
+                                    <span class="sr-only">Loading...</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-100" x-show="!isLoadingProductTrend">
+                            <div class="d-flex flex-column w-100">
+
+                                <div class="flex-wrap justify-content-center">
+                                    <h3 class="text-center w-100">Product Category Sales Trend</h3>
+                                    <div class="bg-white mr-2 mb-2 py-2" x-show="!selectDateRequiredTrend" style="border-radius:15px;">
+
+                                        <div id="productCategoryTrendGraph">
+
+                                        </div>
+                                    </div>
+
+                                    <div x-show="selectDateRequiredTrend" style="width:100%">
+                                        <div class="bg-white ml-3 w-100 mb-2 py-5 d-flex justify-content-center align-items-center" style="border-radius:15px;">
+                                            <img src="../SIMS/Photo/notDataYet.png" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-md-6 col-sm-12">
+                        <div x-show="isLoadingProductShare" class="w-100">
+                            <div class="d-flex w-100 justify-content-center align-items-center" style="min-height: 50vh;">
+                                <div class="spinner-border text-warning" role="status">
+                                    <span class="sr-only">Loading...</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-100" x-show="!isLoadingProductShare">
+                            <div class="d-flex flex-column w-100">
+                                <div class=" d-flex flex-wrap justify-content-center">
+                                    <h3 class="text-center w-100">Product Category</h3>
+                                    <div class="bg-white mr-2 mb-2 py-2" x-show="!selectDateRequiredSR" style="border-radius:15px;">
+
+                                        <div id="productCategoryShareGraph">
+
+                                        </div>
+                                    </div>
+
+                                    <div x-show="selectDateRequiredSR" style="width:100%">
+                                        <div class="bg-white ml-3 w-100 mb-2 py-5 d-flex justify-content-center align-items-center" style="border-radius:15px;">
+                                            <img src="../SIMS/Photo/notDataYet.png" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-12">&nbsp;</div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12 col-md-6 mb-4 mb-md-0">
+                    <div class="orderStatus d-flex flex-wrap shadow p-3 bg-white" x-data="orderStatusGraph" style="border-radius:15px;">
+                        <h3 class="text-center w-100 mb-3">Order Status</h3>
+                        <div class="row w-100 justify-content-start m-0" style="font-size:14px">
+                            <div class="col-12 col-md-6 col-lg-4">
+
+                                    <label>Employees:</label>
+                                    <select id="orderStatusUserSelect" x-on:change="getGraphDataForAllUsers()" class="form-control">
+                                        <option value="1">Rahul Sharma</option>
+<option value="2">Priya Nair</option>
+<option value="3">Arjun Mehta</option>
+<option value="4">Sneha Iyer</option>
+<option value="5">Vikram Rao</option>
+                                    </select>
+
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-4">
+                                <label>Start Date:</label>
+                                <input type="date" id="startDate" class="form-control shadow-sm" x-on:change="getGraphDataForAllUsers()" style="border-radius:7px" value="2026-11-01" />
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-4">
+                                <label>End Date:</label>
+                                <input type="date" id="endDate" x-ref="endDate" class="form-control shadow-sm" x-on:change="getGraphDataForAllUsers()" style="border-radius:7px" value="2026-11-30" />
+                            </div>
+
+                            <div class="col-12">&nbsp;</div>
+                            <hr class="w-100" />
+                        </div>
+                        <div x-show="isLoading" class="w-100">
+                            <div class="d-flex w-100 justify-content-center align-items-center" style="min-height: 50vh;">
+                                <div class="spinner-border text-warning" role="status">
+                                    <span class="sr-only">Loading...</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-100" x-show="!isLoading">
+                            <div class="d-flex flex-column w-100">
+                                <div class="d-flex flex-wrap justify-content-center">
+                                    <div class="bg-white mr-2 mb-2 py-2" x-show="!selectDateRequired" style="border-radius:15px;">
+
+                                        <div id="orderStatusGraph">
+
+                                        </div>
+                                    </div>
+                                    <div x-show="selectDateRequired" class="w-100" style="display:none">
+                                        <div class="ml-3 w-100 mb-2 py-5 d-flex justify-content-center align-items-center" style="border-radius:15px;">
+                                            <img src="../SIMS/Photo/notDataYet.png" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div class="col-sm-12 col-md-6">
+                    <div class="payment d-flex flex-wrap shadow p-3 bg-white" x-data="paymentGraphData" style="border-radius:15px;">
+                        <h3 class="text-center w-100 mb-3">Collection Status</h3>
+                        <div class="row w-100 justify-content-start m-0" style="font-size:14px">
+                            <div class="col-12 col-md-6 col-lg-4">
+
+                                    <label>Employees:</label>
+                                    <select id="paymentUserSelect" x-on:change="getGraphDataForAllUsers()" class="form-control">
+                                        <option value="1">Rahul Sharma</option>
+<option value="2">Priya Nair</option>
+<option value="3">Arjun Mehta</option>
+<option value="4">Sneha Iyer</option>
+<option value="5">Vikram Rao</option>
+                                    </select>
+
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-4">
+                                <label>Start Date:</label>
+                                <input type="date" id="startDate" class="form-control shadow-sm" x-on:change="getGraphDataForAllUsers()" style="border-radius:7px" value="2026-11-01" />
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-4">
+                                <label>End Date:</label>
+                                <input type="date" id="endDate" x-ref="endDate" class="form-control shadow-sm" x-on:change="getGraphDataForAllUsers()" style="border-radius:7px" value="2026-11-30" />
+                            </div>
+
+                            <div class="col-12">&nbsp;</div>
+                            <hr class="w-100" />
+                        </div>
+                        <div x-show="isLoading" class="w-100">
+                            <div class="d-flex w-100 justify-content-center align-items-center" style="min-height: 50vh;">
+                                <div class="spinner-border text-warning" role="status">
+                                    <span class="sr-only">Loading...</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-100" x-show="!isLoading">
+                            <div class="d-flex flex-column w-100">
+                                <template x-if="dataNotFound">
+                                    <div class="alert alert-warning font-weight-bold w-100" style="background-color: #ffc400;font-size: 15px">
+                                        Data not found for current month! (Below chart uses one year data)
+                                    </div>
+                                </template>
+                                <div class="d-flex flex-wrap justify-content-center">
+                                    <div class="bg-white mr-2 mb-2 py-2" x-show="!selectDateRequired" style="border-radius:15px;">
+
+                                        <div id="paymentGraph"></div>
+                                    </div>
+                                    <div x-show="selectDateRequired" class="w-100" style="display:none">
+                                        <div class="ml-3 w-100 mb-2 py-5 d-flex justify-content-center align-items-center" style="border-radius:15px;">
+                                            <img src="../SIMS/Photo/notDataYet.png" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-12">&nbsp;</div>
+            </div>
+
+            <div class="visitLog  shadow p-3 bg-white" x-data="visitLogGraph" style="border-radius:15px;">
+
+                <div class="row w-100 justify-content-start m-0" style="font-size:14px">
+                    <div class="col-12 col-md-6 col-lg-3">
+
+                            <label>Emplyees:</label>
+
+                            <select id="userSelect" x-on:change="getGraphDataForAllUsers()" class="form-control">
+                                <option value="0">All Employees</option>
+                                <option value="1">Rahul Sharma</option>
+<option value="2">Priya Nair</option>
+<option value="3">Arjun Mehta</option>
+<option value="4">Sneha Iyer</option>
+<option value="5">Vikram Rao</option>
+                            </select>
+                    </div>
+                    <div class="col-lg-3">
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <label>Start Date:</label>
+                        <input type="date" id="startDate" class="form-control shadow-sm" x-on:change="getGraphDataForAllUsers()" style="border-radius:7px" value="2026-11-01" />
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <label>End Date:</label>
+                        <input type="date" id="endDate" x-ref="endDate" class="form-control shadow-sm" x-on:change="getGraphDataForAllUsers()" style="border-radius:7px" value="2026-11-30" />
+                    </div>
+                    <div class="col-12">&nbsp;</div>
+                    <hr class="w-100" />
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-7 col-md-6 col-sm-12">
+                        <div x-show="isLoadingCollectionTrend" class="w-100">
+                            <div class="d-flex w-100 justify-content-center align-items-center" style="min-height: 50vh;">
+                                <div class="spinner-border text-warning" role="status">
+                                    <span class="sr-only">Loading...</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-100" x-show="!isLoadingCollectionTrend">
+                            <div class="d-flex flex-column w-100">
+
+                                <div class="flex-wrap justify-content-center">
+                                    <h3 class="text-center w-100">Collection Trend</h3>
+                                    <div class="bg-white mr-2 mb-2 py-2" x-show="!selectDateRequiredTrend" style="border-radius:15px;">
+
+                                        <div id="visitLogCollectionTrendGraph">
+
+                                        </div>
+                                    </div>
+
+                                    <div x-show="selectDateRequiredTrend">
+                                        <div class="bg-white ml-3 w-100 mb-2 py-5 d-flex justify-content-center align-items-center" style="border-radius:15px;">
+                                            <img src="../SIMS/Photo/notDataYet.png" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-md-6 col-sm-12">
+                        <div x-show="isLoadingCollection" class="w-100">
+                            <div class="d-flex w-100 justify-content-center align-items-center" style="min-height: 50vh;">
+                                <div class="spinner-border text-warning" role="status">
+                                    <span class="sr-only">Loading...</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-100" x-show="!isLoadingCollection">
+                            <div class="d-flex flex-column w-100">
+
+                                <div class=" d-flex flex-wrap justify-content-center">
+                                    <h3 class="text-center w-100">Collection</h3>
+                                    <div class="bg-white mr-2 mb-2 py-2" x-show="!selectDateRequiredSR" style="border-radius:15px;">
+
+                                        <div id="visitLogCollectionGraph">
+
+                                        </div>
+                                    </div>
+
+                                    <div x-show="selectDateRequiredSR">
+                                        <div class="bg-white ml-3 w-100 mb-2 py-5 d-flex justify-content-center align-items-center" style="border-radius:15px;">
+                                            <img src="../SIMS/Photo/notDataYet.png" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="row">
+                <div class="col-12">&nbsp;</div>
+            </div>
+
+
+            <div class="spinningProduction  shadow p-3 bg-white" x-data="spinningProductionGraph" style="border-radius:15px;">
+                <div class="row w-100 justify-content-start m-0" style="font-size:14px">
+                    <div class="col-12 col-md-6 col-lg-3">
+
+                            <label>Employees:</label>
+                            <select id="spinningProductionUserSelect" x-on:change="getGraphDataForAllUsers()" class="form-control">
+                                <option value="0">All Employees</option>
+                                <option value="1">Rahul Sharma</option>
+<option value="2">Priya Nair</option>
+<option value="3">Arjun Mehta</option>
+<option value="4">Sneha Iyer</option>
+<option value="5">Vikram Rao</option>
+                            </select>
+
+                    </div>
+                    <div class="col-lg-3">
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <label>Start Date:</label>
+                        <input type="date" id="startDate" class="form-control shadow-sm" x-on:change="getGraphDataForAllUsers()" style="border-radius:7px" value="2026-11-01" />
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <label>End Date:</label>
+                        <input type="date" id="endDate" x-ref="endDate" class="form-control shadow-sm" x-on:change="getGraphDataForAllUsers()" style="border-radius:7px" value="2026-11-30" />
+                    </div>
+                    <div class="col-12">&nbsp;</div>
+                    <hr class="w-100" />
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <div x-show="isLoading" class="w-100">
+                            <div class="d-flex w-100 justify-content-center align-items-center" style="min-height: 50vh;">
+                                <div class="spinner-border text-warning" role="status">
+                                    <span class="sr-only">Loading...</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-100" x-show="!isLoading">
+                            <div class="d-flex flex-column w-100">
+
+                                <div class="d-flex flex-wrap justify-content-center">
+                                    <h3 class="text-center w-100">Spinning Production</h3>
+                                    <div class="bg-white mr-2 mb-2 py-2" x-show="!selectDateRequired" style="border-radius:15px;">
+
+                                        <div id="spinningProductionGraph">
+
+                                        </div>
+                                    </div>
+
+                                    <div id="selectDateRequired" x-show="selectDateRequired" class="w-100 animated fadeIn" style="display:none">
+                                        <div class="bg-white ml-3 w-100 mb-2 py-5  d-flex justify-content-center align-items-center" style="border-radius:15px;">
+                                            <img src="../SIMS/Photo/notDataYet.png" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <div x-show="isLoadingSR" class="w-100">
+                            <div class="d-flex w-100 justify-content-center align-items-center" style="min-height: 50vh;">
+                                <div class="spinner-border text-warning" role="status">
+                                    <span class="sr-only">Loading...</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-100" x-show="!isLoadingSR">
+                            <div class="d-flex flex-column w-100">
+
+                                <div class="d-flex flex-wrap justify-content-center">
+                                    <h3 class="text-center w-100">Spinning Rejection</h3>
+                                    <div class="bg-white mr-2 mb-2 py-2" x-show="!selectDateRequiredSR" style="border-radius:15px;">
+
+                                        <div id="spinningRejectionGraph">
+
+                                        </div>
+                                    </div>
+
+                                    <div id="selectDateRequiredSR" x-show="selectDateRequiredSR" class="w-100 animated fadeIn" style="display:none">
+                                        <div class="bg-white ml-3 w-100 mb-2 py-5  d-flex justify-content-center align-items-center" style="border-radius:15px;">
+                                            <img src="../SIMS/Photo/notDataYet.png" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12">&nbsp;</div>
+            </div>
+
+            <div class="vehicleLog d-flex flex-wrap shadow p-3 bg-white" id="vehicleLog" x-data="vehicleLogData" style="border-radius:15px;">
+                <h3 class="text-center w-100  mb-3">Vehicle Distance Travelled</h3>
+                <div class="row w-100 justify-content-start" style="font-size:14px">
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <label>Vehicle No</label>
+
+                            <select id="vehicleLogUserSelect" x-on:change="getGraphDataForAllUsers()" class="form-control">
+                                <option value="">All Vehicles</option>
+                                <option value="KA-01-AB-1234">KA-01-AB-1234</option>
+<option value="KA-05-MN-5678">KA-05-MN-5678</option>
+<option value="KA-03-XY-9012">KA-03-XY-9012</option>
+                            </select>
+
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <label>Start Date:</label>
+                        <input type="date" id="startDate" class="form-control shadow-sm" x-on:change="getGraphDataForAllUsers()" style="border-radius:7px" value="2026-11-01" />
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <label>End Date:</label>
+                        <input type="date" id="endDate" x-ref="endDate" class="form-control shadow-sm" x-on:change="getGraphDataForAllUsers()" style="border-radius:7px" value="2026-11-30" />
+                    </div>
+
+                    <div class="col-12">&nbsp;</div>
+                    <hr class="w-100" />
+                </div>
+                <div x-show="isLoading" class="w-100">
+                    <div class="d-flex w-100 justify-content-center align-items-center" style="min-height: 50vh;">
+                        <div class="spinner-border text-warning" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-100" x-show="!isLoading">
+                    <div class="d-flex flex-column w-100">
+                        <div class="d-flex flex-wrap justify-content-center">
+                            <div x-show="selectDateRequired" class="w-100">
+                                <div class="bg-white ml-3 w-100 mb-2 py-5 d-flex justify-content-center align-items-center" style="border-radius:15px;">
+                                    <img src="../SIMS/Photo/notDataYet.png" />
+                                </div>
+                            </div>
+                            <div x-show="!selectDateRequired">
+                                <div id="vehicleLogGraph"></div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+            </div>
+        </div>
+    </div>
+<script src="../SIMS/Scripts/Jquery/jquery-3.6.0.js"></script>
+<script src="../SIMS/Scripts/umd/popper.min.js"></script>
+<script src="../SIMS/Scripts/Bootstrap/bootstrap.bundle.min.js"></script>
+<script src="../SIMS/Scripts/Jquery/jquery-ui.js"></script>
+<script src="../SIMS/Scripts/Jquery/jquery.easing.min.js"></script>
+<script src="../SIMS/Scripts/Jquery/jquery.sticky.js"></script>
+<script src="../SIMS/Scripts/Admin/isotope.pkgd.min.js"></script>
+<script src="../SIMS/Scripts/Admin/venobox.min.js"></script>
+<script src="../SIMS/Scripts/Admin/mainAdmin.js"></script>
+<script src="../SIMS/Scripts/Plugins/toastr.js"></script>
+<script src="../SIMS/Scripts/Admin/app.js"></script>
+<script src="../SIMS/Scripts/Admin/dashboard.js"></script>
+<script>
+// Preview-only: answers the dashboard's /Chart/* AJAX calls with sample data
+// shaped like the JSON returned by SIMS/Controllers/ChartController.cs.
+(function () {
+    var staff = [{ StaffId: 1, StaffName: 'Rahul Sharma' }, { StaffId: 2, StaffName: 'Priya Nair' },
+                 { StaffId: 3, StaffName: 'Arjun Mehta' }, { StaffId: 4, StaffName: 'Sneha Iyer' }];
+    var CALLBACKS = ['callOneYearData', 'callOneYearGraph', 'generateGraph', 'generateGraphPR', 'generateGraphSR',
+        'generateGraphSalesReturn', 'generateSRGraph', 'generateSTGraph', 'setDataNotFound', 'setGraph', 'setRecToZero',
+        'setRecToZeroSR', 'setSalesOrderData', 'setTallyEntryPendingCount', 'setUserList', 'updateRec'];
+    function seeded(n) { var x = Math.sin(n * 9301 + 49297) * 233280; return x - Math.floor(x); }
+    function months(field, base, spread, key) {
+        var out = [];
+        for (var m = 1; m <= 12; m++) {
+            var row = { Month: m }; row[field] = Math.round(base + seeded(m + (key || 0)) * spread); out.push(row);
+        }
+        return out;
+    }
+    function key(d) { return d ? Number(d.id || d.userId || 0) + String(d.productCategory || d.vehicleNo || '').length : 0; }
+    var routes = {
+        '/Chart/TallyPendingCount': function () { return 7; },
+        '/Chart/TallyPendingCountById': function () { return 2; },
+        '/Chart/RetrievePaymentAmountPending': function () { return 184500; },
+        '/Chart/RetrieveChequePending': function () { return [{ PendingCount: 5, PendingAmount: 263000 }]; },
+        '/Chart/TallyChartUserIdList': function () { return staff; },
+        '/Chart/TallyChart': function (d) { var k = Number(d.userId); return [{ Achieved: 40 + k * 17, Pending: 12 + k * 6 }]; },
+        '/Chart/RetrieveSalesTrendData': function (d) { return months('SalesAmount', 120000, 180000, key(d)); },
+        '/Chart/RetrieveSalesReturnTrendData': function (d) { return months('SalesAmount', 4000, 16000, key(d) + 50); },
+        '/Chart/RetrieveSalesData': function (d) { return [{ SalesPercentage: 68 + (key(d) % 5) * 5 }]; },
+        '/Chart/RetrieveProductCategoryTrendData': function (d) { return months('SalesAmount', 30000, 90000, key(d) + 20); },
+        '/Chart/RetrieveProductCategoryShareData': function () {
+            return [{ UserName: 'Cookware', SalesPercentage: 34 }, { UserName: 'Tawa', SalesPercentage: 22 },
+                    { UserName: 'Kadai', SalesPercentage: 18 }, { UserName: 'Pressure Cooker', SalesPercentage: 16 },
+                    { UserName: 'Copper Bottles', SalesPercentage: 10 }];
+        },
+        '/Chart/RetrieveOrderStatusChartDataById': function (d) {
+            var k = Number(d.id) || 1;
+            return [{ Orderstatus: 'Received', OrderStatusCount: 18 + k * 3 }, { Orderstatus: 'Not Received', OrderStatusCount: 6 + k }];
+        },
+        '/Chart/RetrievePaymentChartDataById': function (d) { var k = Number(d.id) || 1; return [42000 + k * 5000, 18000, 9500 + k * 1000, 6000]; },
+        '/Chart/RetrieveCollectionTrend': function (d) { return months('Amount', 60000, 110000, key(d) + 80); },
+        '/Chart/RetrieveCollection': function (d) { return [{ Collection: 72 + (key(d) % 4) * 4 }]; },
+        '/Chart/RetrieveSpinningProductionChartDataById': function () { return [{ Achieved: '1840', Pending: '460' }]; },
+        '/Chart/RetrieveSpinningRejection': function () { return [{ BrokenPercentage: 6.4, NetBrokenPercentage: 2.1 }]; },
+        '/Chart/RetrieveVehicleLogChartDataById': function (d) { return months('DistanceTravelled', 900, 1600, key(d) + 110); }
+    };
+    $.ajax = function (opts) {
+        var path = String(opts.url || '').split('?')[0];
+        var fn = routes[path];
+        var data = fn ? fn(opts.data || {}) : [];
+        if (!fn) console.warn('[preview] no mock for', path);
+        var done = [], d = { done: function (cb) { done.push(cb); return d; }, fail: function () { return d; }, always: function (cb) { done.push(cb); return d; }, abort: function () { } };
+        // The chart scripts assign shared global callbacks (generateGraph, updateRec, ...) right before
+        // each call; snapshot them now and restore them while this response is delivered.
+        var snap = {};
+        CALLBACKS.forEach(function (n) { if (typeof window[n] === 'function') snap[n] = window[n]; });
+        var needsGoogle = /Retrieve(SalesData|Collection)$/.test(path);
+        function deliver() {
+            if (needsGoogle && !(window.google && google.visualization && google.visualization.arrayToDataTable && window.salesChart !== undefined)) { return setTimeout(deliver, 150); }
+            var cur = {};
+            Object.keys(snap).forEach(function (n) { cur[n] = window[n]; window[n] = snap[n]; });
+            try {
+                if (opts.success) opts.success(JSON.parse(JSON.stringify(data)));
+                done.forEach(function (cb) { cb(data); });
+            } finally {
+                Object.keys(cur).forEach(function (n) { window[n] = cur[n]; });
+            }
+        }
+        setTimeout(deliver, 200);
+        return d;
+    };
+})();
+
+</script>
+    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
+    <script src=" https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.7.0/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    
+    <script>
+
+        $('.logout-btn').click(function () {
+            localStorage.clear();
+        });
+
+        $(function () {
+            $('#btnclose').click();
+
+        });
+  $(function(){
+
+     var msg = "";
+      if (msg !== "") {
+          toastr.error(msg);
+     }
+  });
+    </script>
+    <script>
+  $(function(){
+     var msg = "";
+      if (msg !== "") {
+          toastr.success(msg);
+     }
+  });
+    </script>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            $('#table').dataTable({
+                paging: false
+            });
+            $('#dataTable').dataTable({
+                paging: false,
+                "aaSorting": [[1, "asc"]]
+            });
+
+            $('button').addClass('btn-sm')
+            $('.btn').addClass('btn-sm')
+            $('#dataTable_length').remove()
+            $('#table_length').remove()
+            $('#dataTable').css('width', 'auto')
+
+
+        });
+
+        $('#btnReadAll').click(function () {
+
+            $('.search').val('');
+        });
+
+
+        $('#sdatepicker').datepicker({
+            dateFormat: 'dd-mm-yy',
+        });
+        $('#edatepicker').datepicker({
+            dateFormat: 'dd-mm-yy',
+        });
+        $(document).ready(function () {
+            $('#sdatepicker').attr("readonly", "readonly");
+            $('#edatepicker').attr("readonly", "readonly");
+        })
+
+        $(function () {
+            var href = window.location.href;
+            $('.sidebar-menu li a').each(function (e, i) {
+                if (href.indexOf($(this).attr('href')) >= 0) {
+                    $(this).addClass('active');
+
+                }
+            });
+        });
+
+
+        $('#CatagoryId').change(function LoadSubCategory() {
+
+            $.ajax({
+                type: "GET",
+                url: "/Item/GetSubCategories",
+                data: { 'CategoryID': $('#CatagoryId').val() },
+                success: function (data) {
+
+                    renderSubCategory('#SubCatagoryId', data);
+                },
+                error: function (error) {
+                    console.log(error);
+                }
+            })
+        });
+
+        function renderSubCategory(element, data) {
+
+            var $ele = $(element);
+            $ele.empty();
+            $ele.append($('<option/>').val('0').text('Select'));
+
+            $.each(data, function (i, val) {
+
+                $($ele).append($('<option>', {
+                    value: val.Id,
+                    text: val.Name
+                }));
+            })
+
+        }
+
+        $('#Itemid').change(function LoadSize() {
+
+            $.ajax({
+                type: "GET",
+
+                url: "/MaterialMovement/GetItemSize",
+                data: { 'Itemid': $('#Itemid').val() },
+                success: function (data) {
+
+                    renderSizeForMaterialMovement('.checkboxes', data);
+                },
+                error: function (error) {
+                    console.log(error);
+                }
+            })
+        });
+
+        $('#UnitOfMeasurementId').change(function LoadSize() {
+
+            $.ajax({
+                type: "GET",
+
+                url: "/Item/GetItemSize",
+                data: { 'UnitOfMeasurementId': $('#UnitOfMeasurementId').val() },
+                success: function (data) {
+
+                    renderSize('.checkboxes', data);
+                },
+                error: function (error) {
+                    console.log(error);
+                }
+            })
+        });
+
+        function renderSize(element, data) {
+
+            var $ele = $(element);
+            $ele.empty();
+            $.each(data, function (i, val) {
+
+                $($ele).append($(' <input type="checkbox" class="checkbox" name="SizeId" value="' + val.Id + '"/>' + '<label class="lable">&nbsp;' + val.Size + '</label><br/>', {
+
+                }));
+            })
+
+        }
+
+        function renderSizeForMaterialMovement(element, data) {
+
+            var $ele = $(element);
+            $ele.empty();
+            $.each(data, function (i, val) {
+                $($ele).append($(' <input type="checkbox" class="checkbox d-none materialMovementSize" name="Size" onchange="getSingleSize(this)" id="' + val.Size + '" value="' + val.Size + '"/>' + '<label for="' + val.Size + '" class="lable" style="cursor:pointer">&nbsp;' + val.Size + '</label><br/>', {
+
+                }));
+            })
+        }
+
+        function myFunction() {
+            $("#Size").addClass("show");
+        }
+
+        function call() {
+            myFunction();
+        }
+
+        $(".multiselect").click(function (e) {
+            $(".checkboxes").addClass('show');
+            e.stopPropagation();
+        });
+
+        $(".checkboxes").click(function (e) {
+            e.stopPropagation();
+        });
+
+        $(document).click(function () {
+            $(".checkboxes").removeClass('show');
+        });
+
+    </script>
+    <script src="../SIMS/Scripts/DropDown/select2.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#Customerid").select2();
+            $("#CatagoryId").select2();
+            $("#SubCatagoryId").select2();
+            $("#UnitOfMeasurementId").select2();
+
+        });</script>
+    <script src="../SIMS/Scripts/DropDown/select2.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () { $("#Customerid").select2(); $("#CatagoryId").select2(); $("#SubCatagoryId").select2(); $("#UnitOfMeasurementId").select2(); });</script>
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                type: "GET",
+                url: '/Chart/TallyPendingCount',
+                success: function (data) {
+                    if ($('#tallyEntyrPending'))
+                        $('#tallyEntyrPending').html(data)
+                }
+            });
+        })
+    </script>
+    <script src="../SIMS/Scripts/Chart/PaymentChequePending.js"></script>
+    <script src="../SIMS/Scripts/Chart/SalesOrder.js"></script>
+    <script src="../SIMS/Scripts/Chart/SpinningProduction.js"></script>
+    <script src="../SIMS/Scripts/Chart/OrderStatus.js"></script>
+    <script src="../SIMS/Scripts/Chart/Payment.js"></script>
+    <script src="../SIMS/Scripts/Chart/VehicleLog.js"></script>
+    <script src="../SIMS/Scripts/Chart/SalesTrend.js"></script>
+    <script src="../SIMS/Scripts/Chart/Sales.js"></script>
+    <script src="../SIMS/Scripts/Chart/ProductCategory_Trend_Share.js"></script>
+    <script src="../SIMS/Scripts/Chart/VisitLog_CollectionTrend_Collcetion.js"></script>
+</body>
+</html>

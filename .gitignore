@@ -1,0 +1,25 @@
+# Build output
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+
+# NuGet packages (restored on build)
+packages/
+*.nupkg
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Archives
+*.zip
+
+# Local secrets (see SIMS/secrets.config.example)
+SIMS/secrets.config
+
+# Vercel
+.vercel/
